@@ -1,6 +1,6 @@
 var Service, Characteristic;
 // var request = require("request");
-var request = require('sync-request');
+var request = require("sync-request");
 var pollingtoevent = require('polling-to-event');
 
 	module.exports = function(homebridge){
