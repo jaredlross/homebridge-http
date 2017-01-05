@@ -1,6 +1,6 @@
 {
   "name": "homebridge-http",
-  "version": "0.0.9",
+  "version": "0.0.901",
   "description": "http(s) plugin for Homebridge: https://github.com/nfarina/homebridge",
   "license": "ISC",
   "keywords": [
@@ -11,18 +11,20 @@
     "homebridge": ">=0.2.0"
   },
   "author": {
-    "name": "Adrian Rudman"
+    "name": "Jared Ross"
   },
   "contributors":[
   { "name" : "NovaGL"},
-  { "name" : "David Parry"}
+  { "name" : "David Parry"},
+  { "name" : "Adrian Rudman"}
   ], 
   "repository": {
     "type": "git",
-    "url": "git://github.com/rudders/homebridge-http.git"
+    "url": "git://github.com/jaredlross/homebridge-http.git"
   },
   "dependencies": {
     "request": "^2.65.0",
-	"polling-to-event": ">=2.0.2"
+	"polling-to-event": ">=2.0.2",
+	  "sync-request": ">=3.0.1"
   }
 }
