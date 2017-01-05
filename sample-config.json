@@ -1,26 +1,269 @@
 {
-     "bridge": {
-        "name": "HomeBridge",
-        "username": "CC:22:3D:E3:CE:30",
-        "port": 51826,
-        "pin": "031-45-154"
-    },
-    
-    "description": "HomeBridge HTTP Status Control",
+	"bridge": {
+		"name": "JLRHomebridge",
+		"username": "CC:22:3D:EA:24:67",
+		"port": 51826,
+		"pin": "112-21-983"
+	},
+	"description": "This is an example configuration file. You can use this as a template for creating your own configuration file.",
+	"platforms": [
+{
+  	"platform": "Camera-ffmpeg",
+ 	 "cameras": [
+		    {
+		        "name": "Basement Camera",
+		        "videoConfig": 
+					{
+					"source": "-re -i rtsp://192.168.10.32:554/user=admin_password=F1zElEsH_channel=1_stream=0.sdp?real_stream",      
+				      	"maxStreams": 2,
+				      	"maxWidth": 1920,
+				      	"maxHeight": 1280,
+				      	"maxFPS": 20
+					}
+    		}
+			
+	    	  
+			,
+			{
+		        "name": "Kitchen Camera",
+		        "videoConfig": 
+				{
+					"source": "-re -i rtsp://192.168.10.33:554/user=admin_password=F1zElEsH_channel=1_stream=0.sdp?real_stream",      
+				      	"maxStreams": 2,
+				      	"maxWidth": 1920,
+				      	"maxHeight": 1280,
+				      	"maxFPS": 20
+				}
+    		    
+			
+	    	  
+			},
+			{
+		        "name": "Crestron TSW-1060",
+		        "videoConfig": 
+				{
+					"source": "-re -i rtsp://192.168.10.192:8554/live.sdp",      
+				      	"maxStreams": 2,
+				      	"maxWidth": 720,
+				      	"maxHeight": 480,
+				      	"maxFPS": 15
+				}
+    		}
+			
+	    	    ]
+			}
 
-    "accessories": [ {
-	        "accessory": "Http",
-                "name": "Alfresco Lamp",
-			"switchHandling": "realtime",
-				"http_method": "GET",
-				"on_url":      "http://localhost/controller/1700/ON",
-				"off_url":     "http://localhost/controller/1700/OFF",
-				"status_url":  "http://localhost/status/100059",				
-			"service": "Light",
-				"brightnessHandling": "yes",
-				"brightness_url":     "http://localhost/controller/1707/%b",
-				"brightnesslvl_url":  "http://localhost/status/100054"			
-									    
-       } 
-    ]
+			],
+	"accessories": [
+
+	{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm001",
+      "on_url": "http://127.0.0.1/Rm001/on",
+      "off_url": "http://127.0.0.1/Rm001/off",
+      "status_url": "http://192.168.10.248:11001/status",
+      "brightness_url": "http://127.0.0.1/Rm001/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22001/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm002",
+      "on_url": "http://127.0.0.1/Rm002/on",
+      "off_url": "http://127.0.0.1/Rm002/off",
+      "status_url": "http://192.168.10.248:11002/status",
+      "brightness_url": "http://127.0.0.1/Rm002/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22002/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm003",
+      "on_url": "http://127.0.0.1/Rm003/on",
+      "off_url": "http://127.0.0.1/Rm003/off",
+      "status_url": "http://192.168.10.248:11003/status",
+      "brightness_url": "http://127.0.0.1/Rm003/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22003/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm004",
+      "on_url": "http://127.0.0.1/Rm004/on",
+      "off_url": "http://127.0.0.1/Rm004/off",
+      "status_url": "http://192.168.10.248:11004/status",
+      "brightness_url": "http://127.0.0.1/Rm004/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22004/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm005",
+      "on_url": "http://127.0.0.1/Rm005/on",
+      "off_url": "http://127.0.0.1/Rm005/off",
+      "status_url": "http://192.168.10.248:11005/status",
+      "brightness_url": "http://127.0.0.1/Rm005/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22005/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm006",
+      "on_url": "http://127.0.0.1/Rm006/on",
+      "off_url": "http://127.0.0.1/Rm006/off",
+      "status_url": "http://192.168.10.248:11006/status",
+      "brightness_url": "http://127.0.0.1/Rm006/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22006/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm007",
+      "on_url": "http://127.0.0.1/Rm007/on",
+      "off_url": "http://127.0.0.1/Rm007/off",
+      "status_url": "http://192.168.10.248:11007/status",
+      "brightness_url": "http://127.0.0.1/Rm007/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22007/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm008",
+      "on_url": "http://127.0.0.1/Rm008/on",
+      "off_url": "http://127.0.0.1/Rm008/off",
+      "status_url": "http://192.168.10.248:11008/status",
+      "brightness_url": "http://127.0.0.1/Rm008/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22008/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm009",
+      "on_url": "http://127.0.0.1/Rm009/on",
+      "off_url": "http://127.0.0.1/Rm009/off",
+      "status_url": "http://192.168.10.248:11009/status",
+      "brightness_url": "http://127.0.0.1/Rm009/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22009/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm010",
+      "on_url": "http://127.0.0.1/Rm010/on",
+      "off_url": "http://127.0.0.1/Rm010/off",
+      "status_url": "http://192.168.10.248:11010/status",
+      "brightness_url": "http://127.0.0.1/Rm010/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22010/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm011",
+      "on_url": "http://127.0.0.1/Rm011/on",
+      "off_url": "http://127.0.0.1/Rm011/off",
+      "status_url": "http://192.168.10.248:11011/status",
+      "brightness_url": "http://127.0.0.1/Rm011/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22011/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm012",
+      "on_url": "http://127.0.0.1/Rm012/on",
+      "off_url": "http://127.0.0.1/Rm012/off",
+      "status_url": "http://192.168.10.248:11012/status",
+      "brightness_url": "http://127.0.0.1/Rm012/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22012/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    },{
+      "accessory": "homebridge-http.Http",
+      "switchHandling": "realtime",
+      "name": "Rm013",
+      "on_url": "http://127.0.0.1/Rm013/on",
+      "off_url": "http://127.0.0.1/Rm013/off",
+      "status_url": "http://192.168.10.248:11013/status",
+      "brightness_url": "http://127.0.0.1/Rm013/%b",
+      "brightnesslvl_url": "http://192.168.10.248:22013/brightness",
+      "username": "",
+      "password": "",
+      "sendimmediately": "",
+      "http_method": "POST",
+      "http_brightness_method": "POST",
+      "service": "Light",
+      "brightnessHandling": "realtime"
+    }
+]
 }
