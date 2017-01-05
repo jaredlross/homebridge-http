@@ -43,12 +43,12 @@ var pollingtoevent = require('polling-to-event');
 	        	that.httpRequest(powerurl, "", "GET", that.username, that.password, that.sendimmediately, function(error, response, body) {
             		if (error) {
                 		that.log('HTTP get power function failed: %s', error.message);
-		                callback(error);
+		//		                callback(error);
             		} else {               				    
 						done(null, body);
             		}
         		})
-			}, {longpolling:true,interval:300,longpollEventName:"statuspoll"});
+			}, {longpolling:true,interval:1000,longpollEventName:"statuspoll"});
 
 		statusemitter.on("statuspoll", function(data) {       
         	var binaryState = parseInt(data.replace(/\D/g,""));
@@ -86,7 +86,7 @@ var pollingtoevent = require('polling-to-event');
 						done(null, responseBody);
             		}
         		}) // set longer polling as slider takes longer to set value
-    	}, {longpolling:true,interval:300,longpollEventName:"levelpoll"});
+    	}, {longpolling:true,interval:1000,longpollEventName:"levelpoll"});
 
 		levelemitter.on("levelpoll", function(data) {  
 			that.currentlevel = parseInt(data);
