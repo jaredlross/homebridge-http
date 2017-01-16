@@ -1,6 +1,6 @@
 {
   "name": "homebridge-http",
-  "version": "0.0.902",
+  "version": "0.0.903",
   "description": "http(s) plugin for Homebridge: https://github.com/nfarina/homebridge",
   "license": "ISC",
   "keywords": [
@@ -25,7 +25,6 @@
   "dependencies": {
     "request": "^2.65.0",
 	"polling-to-event": ">=2.0.2",
-	  "sync-request": ">=3.0.1",
-	  "request-sync": ">=1.0.0"
+	  "sync-request": ">=3.0.1"
   }
 }
