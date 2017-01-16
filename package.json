@@ -25,6 +25,7 @@
   "dependencies": {
     "request": "^2.65.0",
 	"polling-to-event": ">=2.0.2",
-	  "sync-request": ">=3.0.1"
+	  "sync-request": ">=3.0.1",
+	  "request-sync": ">=1.0.0"
   }
 }
