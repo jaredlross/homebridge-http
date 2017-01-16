@@ -1,6 +1,5 @@
 var Service, Characteristic;
-// var request = require("request");
-var request = require("then-request");
+var request = require("request");
 var pollingtoevent = require('polling-to-event');
 
 	module.exports = function(homebridge){
