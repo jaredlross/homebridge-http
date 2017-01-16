@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "request": "^2.65.0",
-	"polling-to-event": ">=2.0.2",
-	  "then-request": ">=2.2.0"
+	"polling-to-event": ">=2.0.2"
   }
 }
